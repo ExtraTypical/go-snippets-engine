@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	database "github.com/ExtraTypical/go-snippets-engine/internal/db"
+	"github.com/ExtraTypical/go-snippets-engine/internal/window"
 	hook "github.com/robotn/gohook"
 )
 
@@ -17,7 +17,8 @@ type PressedKeys struct {
 func main() {
 
 	fmt.Println("~ Program running! Leader key is " + `";"` + " ~")
-	fmt.Println("~ It's recommended that you don't store any " + "information that could be sensitive in nature as a snippet. ~")
+	fmt.Println("~ Don't store any " + "information that could be sensitive in nature as a snippet. ~")
+	fmt.Println("~ Press Ctrl+Shift+O to open a window for adding new snippets ~")
 
 	eventHandler()
 }
@@ -40,9 +41,9 @@ func eventHandler() {
 
 	for input := range eventChan {
 
-		if input.Keychar != 0 {
-			fmt.Println(input)
-		}
+		// if input.Keychar != 0 {
+		// 	fmt.Println(input)
+		// }
 
 		/* Updated refactored method */
 		switch {
@@ -72,7 +73,8 @@ func handleKeyDown(input hook.Event, read *bool, readString *string, pressed *Pr
 	}
 
 	if pressed.Ctrl && pressed.Shift && pressed.O {
-		database.StartDb()
+		window.OpenWindow()
+
 	}
 
 	switch {
@@ -98,7 +100,7 @@ func handleKeyDown(input hook.Event, read *bool, readString *string, pressed *Pr
 	/* If read is true, record string */
 	case *read && input.Kind == hook.KeyDown && input.Keychar != 0:
 		*readString += string(input.Keychar)
-		fmt.Println("String is", readString)
+		fmt.Println("String is", *readString)
 
 	}
 }

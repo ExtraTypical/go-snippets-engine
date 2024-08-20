@@ -2,12 +2,20 @@ module github.com/ExtraTypical/go-snippets-engine
 
 go 1.22.3
 
-require github.com/robotn/gohook v0.41.0
+require (
+	gioui.org v0.7.1
+	github.com/robotn/gohook v0.41.0
+)
 
 require (
-	github.com/bhendo/go-powershell v0.0.0-20190719160123-219e7fb4e41e // indirect
-	github.com/juju/errors v0.0.0-20200330140219-3fe23663418f // indirect
-	github.com/martinlindhe/inputbox v0.0.0-20210326232244-b26136a79ad0 // indirect
+	gioui.org/cpu v0.0.0-20210817075930-8d6a761490d2 // indirect
+	gioui.org/shader v1.0.8 // indirect
+	github.com/go-text/typesetting v0.1.1 // indirect
 	github.com/vcaesar/keycode v0.10.1 // indirect
 	github.com/vcaesar/tt v0.20.1 // indirect
+	golang.org/x/exp v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/exp/shiny v0.0.0-20240707233637-46b078467d37 // indirect
+	golang.org/x/image v0.18.0 // indirect
+	golang.org/x/sys v0.22.0 // indirect
+	golang.org/x/text v0.16.0 // indirect
 )
