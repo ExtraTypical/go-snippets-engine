@@ -33,7 +33,7 @@ func run(window *app.Window) error {
 			gtx := app.NewContext(&ops, e)
 
 			// Define an large label with an appropriate text:
-			title := material.H1(theme, "Hello, Gio")
+			title := material.H1(theme, "This is the window")
 
 			// Change the color of the label.
 			maroon := color.NRGBA{R: 127, G: 0, B: 0, A: 255}
